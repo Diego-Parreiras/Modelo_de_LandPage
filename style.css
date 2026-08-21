@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cambo&display=swap');
+
+:root {
+    /* =========================================
+       1. CORES
+       ========================================= */
+    --cor-primaria: #005d7a91;
+    --cor-secundaria: #001e5f;
+    --cor-rodape: #001d04;
+    --cor-texto-claro: #a9f2fc;
+    --cor-fundo-transparente: #fdfdfd00;
+    --cor-sombra: #4e4e4e;
+
+    /* Overlay e Telas Cheias */
+    --cor-fundo-modal: rgba(0, 0, 0, 0.8);
+    --cor-fundo-expandido: rgba(0, 0, 0, 0.9);
+    --cor-sombra-modal: rgba(0, 0, 0, 0.5);
+
+    /* =========================================
+       2. TIPOGRAFIA
+       ========================================= */
+    --fonte-titulos: "Abril Fatface", serif;
+    --fonte-textos: "Cambo", serif;
+    --peso-titulo: 900;
+
+    /* Tamanhos de Fonte */
+    --tamanho-fonte-p: 2vh;
+    /* Links e detalhes */
+    --tamanho-fonte-m: 3vh;
+    /* Botões e rodapé */
+    --tamanho-fonte-g: 2vh;
+    /* Textos de parágrafos */
+    --tamanho-fonte-xg: 4vh;
+    /* Subtítulos e títulos de modal */
+    --tamanho-fonte-xxg: 6vh;
+    /* Títulos principais */
+
+    /* =========================================
+       3. ESPAÇAMENTOS (Margin, Padding, Gap)
+       ========================================= */
+    --espaco-p: 1vh;
+    --espaco-m: 2vh;
+    --espaco-g: 4vh;
+    --espaco-xg: 5vh;
+    --espaco-fixo: 20px;
+    /* Utilizado em Gaps que não dependem da tela */
+
+    /* =========================================
+       4. ESTRUTURA E EFEITOS
+       ========================================= */
+    --raio-borda: 20px;
+    --sombra-padrao: 0 4px 8px var(--cor-sombra);
+    --sombra-flutuante: 0 10px 30px var(--cor-sombra-modal);
+
+    /* Transições */
+    --transicao-rapida: 0.3s ease;
+    --transicao-suave: 0.5s ease-in-out;
+
+    /* =========================================
+       5. IMAGENS E FUNDOS
+       ========================================= */
+    --imagem-de-fundo: url('28348.jpg');
+}
+
+/* =========================================
+   RESETS E BODY
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: var(--imagem-de-fundo);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 10vh;
+    width: 10vh;
+}
+
+/* =========================================
+   TEXTOS E CONTEÚDOS
+   ========================================= */
+.texto {
+    gap: var(--espaco-g);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    color: var(--cor-primaria);
+    margin: var(--espaco-xg);
+    font-size: var(--tamanho-fonte-g);
+    font-family: var(--fonte-textos);
+}
+
+.texto__titulo {
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-titulos);
+    font-size: var(--tamanho-fonte-xxg);
+}
+
+.texto#apresentacao.texto__titulo {
+    font-size: var(--tamanho-fonte-xxg);
+}
+
+.texto__conteudo__destaque {
+    font-family: var(--fonte-titulos);
+    font-weight: var(--peso-titulo);
+    color: var(--cor-secundaria);
+}
+
+/* =========================================
+   BLOCOS E CONTAINERS
+   ========================================= */
+.bloco {
+    background-color: var(--cor-fundo-transparente);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: var(--espaco-xg);
+    padding: var(--espaco-xg);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-padrao);
+}
+
+.bloco#apresentacao {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* =========================================
+   IMAGENS GERAIS
+   ========================================= */
+img {
+    margin: var(--espaco-p) var(--espaco-xg);
+    height: 40vh;
+    width: 80vh;
+    border-radius: var(--raio-borda);
+}
+
+.imagem__destaque:hover {
+    transform: scale(1.1);
+    transition: transform var(--transicao-suave);
+}
+
+.perfil {
+    width: 50vh;
+    height: 70vh;
+    border-radius: var(--raio-borda);
+}
+
+/* =========================================
+   RODAPÉ E LINKS
+   ========================================= */
+.rodape {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    background-color: var(--cor-rodape);
+    color: var(--cor-texto-claro);
+    padding: var(--espaco-xg) 10vh;
+    border-top: 1px solid var(--cor-secundaria);
+    font-family: var(--fonte-textos);
+    font-size: var(--tamanho-fonte-m);
+    gap: var(--espaco-p);
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    border-radius: var(--raio-borda);
+    padding: var(--espaco-m);
+    height: var(--espaco-g);
+    width: 20vh;
+}
+
+.link:hover {
+    transform: scale(1.1);
+    transition: background-color var(--transicao-suave), color var(--transicao-suave);
+}
+
+/* =========================================
+   BOTÕES
+   ========================================= */
+.botao {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border-radius: var(--raio-borda);
+    padding: var(--espaco-m) var(--espaco-g);
+    font-size: var(--tamanho-fonte-m);
+    cursor: pointer;
+    border: none;
+}
+.botao:hover{
+    transform: scale(1.1);
+}
+
+/* =========================================
+   MODAL
+   ========================================= */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: var(--cor-fundo-modal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transicao-rapida);
+}
+
+.modal_ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal_overlay .bloco::-webkit-scrollbar,
+.slides::-webkit-scrollbar {
+    display: none;
+}
+
+.modal_overlay .bloco,
+.slides {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.modal_overlay .bloco {
+    flex-direction: column;
+    width: 90vw;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    background-image: var(--imagem-de-fundo);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    padding: 8vh var(--espaco-xg) var(--espaco-xg) var(--espaco-xg);
+    margin: 0;
+    box-shadow: var(--sombra-flutuante);
+    padding: 8vh;
+}
+
+#fechar_modal {
+    position: absolute;
+    top: var(--espaco-m);
+    right: var(--espaco-m);
+    z-index: 20;
+    padding: var(--espaco-p) var(--espaco-m);
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+.modal_overlay .texto {
+    width: 100%;
+    margin: 0 0 3vh 0;
+}
+
+.modal_overlay .texto__titulo {
+    font-size: var(--tamanho-fonte-xg);
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.modal_overlay .texto__conteudo {
+    width: 100%;
+}
+
+/* =========================================
+   CARROSSEL
+   ========================================= */
+.carrossel {
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+@keyframes deslizar-lento {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.slides {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    gap: var(--espaco-fixo);
+    animation: deslizar-lento 20s linear infinite;
+}
+
+.slides:hover {
+    animation-play-state: paused;
+}
+
+.slides img {
+    height: 100%;
+    width: auto;
+    max-width: 60vw;
+    object-fit: cover;
+    border-radius: var(--raio-borda);
+    cursor: pointer;
+    margin: 0;
+}
+
+/* =========================================
+   IMAGEM EXPANDIDA (TELA CHEIA)
+   ========================================= */
+.imagem-expandida {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    object-fit: contain !important;
+    background-color: var(--cor-fundo-expandido) !important;
+    z-index: 9999 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
