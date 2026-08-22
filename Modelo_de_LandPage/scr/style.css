@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cambo&display=swap');
+
+:root {
+    /* =========================================
+       VARIÁVEIS DE CORES E TIPOGRAFIA
+       ========================================= */
+    --cor-primaria: #005d7a91;
+    --cor-secundaria: #001e5f;
+    --cor-rodape: #001d04;
+    --cor-texto-claro: #a9f2fc;
+    --cor-texto-mais-claro: #ffffff;
+    --cor-fundo-transparente: transparent;
+    --cor-sombra: #4e4e4e;
+    --cor-fundo-expandido: rgba(0, 0, 0, 0.9);
+    --cor-botao-perfil: #8805af;
+
+    --fonte-titulos: "Abril Fatface", serif;
+    --fonte-textos: "Cambo", serif;
+    --peso-titulo: 900;
+
+    --tamanho-fonte-p: 2vh;
+    --tamanho-fonte-m: 3vh;
+    --tamanho-fonte-g: 2vh;
+    --tamanho-fonte-xg: 4vh;
+    --tamanho-fonte-xxg: 6vh;
+
+    /* =========================================
+       VARIÁVEIS DE ESPAÇAMENTO E EFEITOS
+       ========================================= */
+    --espaco-p: 1vh;
+    --espaco-m: 2vh;
+    --espaco-g: 4vh;
+    --espaco-xg: 5vh;
+    --espaco-fixo: 20px;
+    --raio-borda: 20px;
+
+    --sombra-padrao: 0 4px 8px var(--cor-sombra);
+    --transicao-suave: 0.5s ease-in-out;
+    --z-index-topo: 9999;
+    --imagem-de-fundo: url('img/imagemDeFundo.jpg');
+}
+
+/* =========================================
+   REGRAS GLOBAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background-image: var(--imagem-de-fundo);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cor-fundo-expandido);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cor-primaria);
+    border-radius: var(--raio-borda);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-secundaria);
+}
+
+/* =========================================
+   TEXTOS GERAIS
+   ========================================= */
+.texto {
+    gap: var(--espaco-g);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    color: var(--cor-primaria);
+    margin: var(--espaco-xg);
+    font-size: var(--tamanho-fonte-g);
+    font-family: var(--fonte-textos);
+}
+
+.texto__titulo,
+.texto#apresentacao.texto__titulo {
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-titulos);
+    font-size: var(--tamanho-fonte-xxg);
+    text-align: center;
+}
+
+.texto__conteudo__destaque {
+    font-family: var(--fonte-titulos);
+    font-weight: var(--peso-titulo);
+    color: var(--cor-secundaria);
+}
+
+/* Microtextos */
+.microtexto {
+    font-style: italic;
+    font-size: var(--tamanho-fonte-p);
+    margin-top: -2.5vh;
+    opacity: 0.8;
+}
+
+#microtexto__projetos {
+    margin-top: 1vh;
+}
+
+.microtexto-carrossel {
+    text-align: center;
+    width: 100%;
+    margin-top: -1vh;
+    margin-bottom: var(--espaco-g);
+}
+
+/* =========================================
+   BLOCOS PRINCIPAIS
+   ========================================= */
+.bloco {
+    background-color: var(--cor-fundo-transparente);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: var(--espaco-xg);
+    padding: var(--espaco-xg);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-padrao);
+}
+
+.bloco#ver_mais_projetos {
+    margin-top: var(--espaco-g);
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+}
+
+/* Páginas Secundárias */
+.bloco-projeto {
+    flex-direction: column;
+    width: 90vw;
+    max-width: 1200px;
+    margin: var(--espaco-xg) auto;
+    position: relative;
+    padding: 10vh 8vh var(--espaco-xg) 8vh;
+}
+
+.bloco-projeto .texto {
+    width: 100%;
+    margin: 0;
+}
+
+.bloco-projeto .texto__titulo {
+    margin-bottom: var(--espaco-m);
+}
+
+/* =========================================
+   IMAGENS
+   ========================================= */
+img {
+    margin: var(--espaco-p) var(--espaco-xg);
+    height: 40vh;
+    width: 80vh;
+    border-radius: var(--raio-borda);
+    object-fit: cover;
+}
+
+.imagem__destaque:hover {
+    transform: scale(1.1);
+    transition: transform var(--transicao-suave);
+}
+
+.img_perfil {
+    height: auto;
+    width: auto;
+}
+
+.perfil {
+    width: 50vh;
+    height: 70vh;
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-rodape);
+    color: var(--cor-texto-claro);
+    padding: var(--espaco-xg) 10vh;
+    border-top: 1px solid var(--cor-secundaria);
+    font-family: var(--fonte-textos);
+    font-size: var(--tamanho-fonte-m);
+    gap: var(--espaco-p);
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    border-radius: var(--raio-borda);
+    padding: var(--espaco-m);
+    height: var(--espaco-g);
+    width: 20vh;
+}
+
+.link:hover,
+.botao:hover {
+    transform: scale(1.1);
+    transition: transform var(--transicao-suave);
+}
+
+/* =========================================
+   BOTÕES
+   ========================================= */
+.botao {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-mais-claro);
+    border-radius: var(--raio-borda);
+    padding: var(--espaco-m) var(--espaco-g);
+    font-size: var(--tamanho-fonte-m);
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.botao#botao__de__perfil {
+    background-color: var(--cor-botao-perfil);
+    color: var(--cor-texto-mais-claro);
+}
+
+.botao-voltar {
+    position: absolute;
+    top: var(--espaco-g);
+    right: var(--espaco-g);
+    padding: var(--espaco-p) var(--espaco-m);
+    font-size: var(--tamanho-fonte-p);
+    z-index: 10;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+   CARROSSEL
+   ========================================= */
+.carrossel {
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    margin: var(--espaco-m) 0;
+}
+
+@keyframes deslizar-lento {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.slides {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    gap: var(--espaco-fixo);
+    animation: deslizar-lento 20s linear infinite;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.slides::-webkit-scrollbar {
+    display: none;
+}
+
+.slides:hover {
+    animation-play-state: paused;
+}
+
+.slides img {
+    height: 100%;
+    width: auto;
+    max-width: 60vw;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* =========================================
+   LIGHTBOX (Tela Cheia)
+   ========================================= */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--cor-fundo-expandido);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transicao-rapida);
+}
+
+.lightbox.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 100vw;
+    max-height: 100vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--raio-borda);
+    margin: 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+#fechar_lightbox {
+    position: absolute;
+    top: 3vh;
+    right: 5vh;
+    color: var(--cor-texto-claro);
+    font-size: 6vh;
+    cursor: pointer;
+    font-family: sans-serif;
+    z-index: 10001;
+}
+
+#fechar_lightbox:hover {
+    color: var(--cor-secundaria);
+    transform: scale(1.1);
+    transition: var(--transicao-rapida);
+}
+
+/* Controles do Lightbox */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--cor-texto-claro);
+    font-size: 6vh;
+    cursor: pointer;
+    user-select: none;
+    padding: 2vh;
+    z-index: 10001;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.nav-btn:hover {
+    color: var(--cor-secundaria);
+}
+
+#btn_prev { left: 2vh; }
+#btn_next { right: 2vh; }
+
+@media (max-width: 600px) {
+    .nav-btn {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        padding: 1vh 2vh;
+    }
+}
+
+/* =========================================
+   GALERIA GRID
+   ========================================= */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espaco-m);
+    width: 100%;
+    padding: var(--espaco-m) 0;
+}
+
+.galeria-item {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-padrao);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+    margin: 0;
+    display: block;
+    transition: transform var(--transicao-suave);
+}
+
+.galeria-item:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media (max-width: 900px) {
+    
+    .bloco, .bloco#apresentacao {
+        flex-direction: column;
+        text-align: center;
+        width: 90%; 
+        margin: var(--espaco-m) auto; 
+        padding: var(--espaco-g);
+    }
+
+    .bloco-projeto {
+        width: 90%; 
+        margin: var(--espaco-m) auto;
+        padding: 12vh var(--espaco-m) var(--espaco-g) var(--espaco-m); 
+    }
+
+    img, .perfil, .imagem__destaque, .img_perfil {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        margin: var(--espaco-m) 0;
+    }
+
+    .texto {
+        margin: var(--espaco-m) 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .texto__titulo, .texto#apresentacao.texto__titulo {
+        font-size: var(--tamanho-fonte-xg);
+        margin-bottom: var(--espaco-m);
+    }
+
+    .botao-voltar {
+        top: var(--espaco-m);
+        right: var(--espaco-m);
+    }
+
+    .rodape {
+        padding: var(--espaco-g) var(--espaco-m);
+    }
+
+    .slides img {
+        max-width: 85vw;
+        height: 30vh; 
+    }
+
+    .carrossel {
+        margin-bottom: 0;
+    }
+
+    .bloco .imagem {
+        order: 1; 
+    }
+
+    .bloco .texto {
+        order: 2; 
+        margin: var(--espaco-m) 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .bloco-projeto .imagem,
+    .bloco-projeto .texto {
+        order: 0; 
+    }
+}
