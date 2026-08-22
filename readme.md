@@ -30,5 +30,10 @@ Este projeto foi construído "à mão" com o foco em praticar a escrita de códi
 2. Abra a pasta do projeto no seu editor de código (como o VS Code).
 3. Abra o arquivo `index.html` no seu navegador (recomenda-se o uso da extensão *Live Server* para melhor experiência).
 
+## 🌐 Preview Online
+
+O projeto está no ar! Você pode acessar e interagir com a aplicação diretamente pelo GitHub Pages através do link abaixo:
+
+🔗 **[Acessar Imobiliária Sincera](https://diego-parreiras.github.io/Modelo_de_LandPage/)**
 ---
 *Desenvolvido com dedicação para colocar os estudos em prática.*
